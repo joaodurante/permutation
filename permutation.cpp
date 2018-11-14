@@ -6,12 +6,19 @@
 
 void permute(char string[], int start, int end);
 void swap(char string[], int i, int j);
+char* getString();
 
 int main(){
-	char string[STRING_SIZE] = STRING;
-	int stringSize = STRING_SIZE - 1; //STRING_SIZE - "\0"
-	permute(string, 0, stringSize);
-	getchar();
+	char fullString[11];
+	printf("Enter the characters (1-10): ");
+	scanf("%s", &fullString);
+	printf("\n\n-----RESULT-----\n\n");
+	
+	int stringLength = strlen(fullString);
+	char string[stringLength];
+	strcpy(string, fullString);
+	
+	permute(string, 0, stringLength);
 }
 
 void permute(char string[], int start, int end){
