@@ -22,16 +22,16 @@ void permute(char string[], int start, int end){
 	}
 	else{
 		for(int i = start; i < end; i++){
-			swap(string, start, i);
+			swap(string, i, start);
 			permute(string, start + 1, end);
-			swap(string, start, i);
+			swap(string, i, start);
 		}
 	}
 }
 
 void swap(char string[], int i, int j){
-	char temp = string[i];
-	string[i] = string[j];
-	string[j] = temp;
+	char temp = string[j];
+	string[j] = string[i];
+	string[i] = temp;
 }
 
